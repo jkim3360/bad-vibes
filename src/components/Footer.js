@@ -7,7 +7,7 @@ import './images/instagram.png'
 
 export default function Footer() {
     return (
-        <div>
+        <div style={{ 'border': `${1}}px solid grey` }}>
             <div className='footer-container'>
                 <ul className='footer-list'>
                     <h4>About</h4>
@@ -18,11 +18,10 @@ export default function Footer() {
                     <li><a href='#'>Affiliates</a></li>
                 </ul>
 
-
                 <ul className='footer-list'>
                     <h4>Account</h4>
-                    <li><a href='#'>My Journal</a></li>
                     <li><a href='#'>My Account</a></li>
+                    <li><a href='#'>Record Collection</a></li>
                     <li><a href='#'>Order Status</a></li>
                     <li><a href='#'>Discounts</a></li>
                     <li><a href='#'>Sell</a></li>
@@ -47,20 +46,21 @@ export default function Footer() {
                 </ul>
             </div>
 
-
             <div className='footer-base'>
-                Legal  |  Account Info  |  Company Info  |  Contact
-                <a href='#'><img
-                        className='social-media'
-                        src={require('./images/twitter.png')} />
+                <a href='#'>Legal</a>  |
+                <a href='#'>Company Info</a>  |
+                <a href='#'>Contact</a>
+                <a href='http://facebook.com' target='_blank'><img
+                    className='social-media'
+                    src={require('./images/facebook.png')} />
                 </a>
-                <a href='#'><img
-                        className='social-media'
-                        src={require('./images/facebook.png')} />
+                <a href='http://instagram.com' target='_blank'><img
+                    className='social-media'
+                    src={require('./images/instagram.png')} />
                 </a>
-                <a href='#'><img
-                        className='social-media'
-                        src={require('./images/instagram.png')} />
+                <a href='http://twitter.com' target='_blank'><img
+                    className='social-media'
+                    src={require('./images/twitter.png')} />
                 </a>
             </div>
         </div>

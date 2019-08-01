@@ -2,10 +2,9 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import './images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'
+import appleBadge from './images/apple-badge.svg'
 
 export default function SearchResultsList(props) {
-
   return (
     <div className='search-result-container' key='search-result-container'>
       {/* <ScrollArea
@@ -24,7 +23,7 @@ export default function SearchResultsList(props) {
           longDescription,
           collectionName,
           trackPrice,
-          previewUrl } = item
+          previewUrl, trackViewUrl } = item
 
         return (
           <div className="search-result-item-container" key={trackId}>
@@ -44,15 +43,12 @@ export default function SearchResultsList(props) {
                   favorites: []
                 }
               }}>{`${trackName}`}</Link></div>
-              <div className='artist-name' >{artistName}</div>
+              <div className='artist-name' key={trackId}>{artistName}</div>
+              <div><a href={trackViewUrl} target="_blank"><img src={appleBadge} className="apple-badge" alt="badge" /></a></div>
             </div>
-            {/* <img src="./images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"/> */}
           </div>
         )
       }) : <h1>Loading...</h1>}
-
-
-
     </div>
   )
 }

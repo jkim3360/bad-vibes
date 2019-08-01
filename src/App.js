@@ -4,7 +4,7 @@ import './App.css';
 import MainPage from './components/MainPage'
 import Navbar from './components/Navbar'
 import Charts from './components/Charts'
-import SongPage from './components/SongPage';
+
 
 const axios = require('axios');
 
@@ -14,7 +14,6 @@ class App extends React.Component {
     this.state = {
       searchItem: '',
       searchResult: [],
-      chart: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,17 +28,14 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
+    let corsProxy = "https://cors-anywhere.herokuapp.com/";
     event.preventDefault()
-    axios.get(`https://itunes.apple.com/search?country=us&term=${this.state.searchItem}&limit=30`)
+    axios.get(corsProxy + `https://itunes.apple.com/search?country=us&term=${this.state.searchItem}&limit=30`)
       .then(responseData => {
         const searchResult = responseData.data.results;
-        // console.log(searchResult)
         this.setState({
           searchResult: searchResult,
         });
-        // console.log(this.state)
-        // this.props.history.push('/search-results')
-        // console.log(this.state.searchResult)
       })
       .catch(error => {
         console.error(error);
@@ -51,7 +47,6 @@ class App extends React.Component {
     axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=music&apiKey=${API_TOKEN}`)
       .then(responseData => {
         const searchResult = responseData.data.articles;
-        // console.log(searchResult)
         this.setState({
           newsSearchResult: searchResult,
         });
@@ -59,16 +54,20 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+    axios.get(`https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/non-explicit.json`)
+      .then(responseData => {
+        const charts = responseData;
+        this.setState({
+          charts: charts,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }
 
-
-  // https://rss.itunes.apple.com/api/v1/us/apple-music/top-songs/all/25/explicit.json
-
-
   render() {
-    // console.log(this.state.searchResult)
     const React = require('react');
-
     return (
       <div className="app-container">
 
@@ -78,23 +77,20 @@ class App extends React.Component {
             <Navbar
               {...props}
               value={this.state.searchItem}
-
               onSubmit={this.handleSubmit}
               onChange={this.handleChange}
-            />)}
-        />
-        {/*         
-        <Route path='/favorites'
-      component={Favorites} /> */}
-
-        <Route path='/:song_id'
-          component={(props) =>
-            <SongPage {...props} />} />
+            />)} />
 
         <Route
-          path="/" state={this.state}
-          render={(props) =>
-            <MainPage {...props} searchResults={this.state.searchResult} news={this.state.newsSearchResult} />}
+          path="/"
+          render={props => (
+            <MainPage
+              {...props}
+              value={this.state.searchItem}
+              onSubmit={this.handleSubmit}
+              onChange={this.handleChange}
+              searchResults={this.state.searchResult}
+              news={this.state.newsSearchResult} />)}
         />
 
         <Route
@@ -102,15 +98,7 @@ class App extends React.Component {
           component={
             Charts}
         />
-
-
-
-
       </div>
-
-
-
-
     );
   }
 }

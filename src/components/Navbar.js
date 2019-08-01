@@ -3,14 +3,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { Input } from './common';
-import { Route, withRouter } from "react-router-dom";
-
 import './cassette.jpg'
 
 export default function Navbar({ value, onChange, onSubmit }) {
-
-
-
     return (
         <div className="navbar">
 
@@ -43,8 +38,7 @@ export default function Navbar({ value, onChange, onSubmit }) {
             </form>
 
             <div className='nav-links-container'>
-                <Link className='nav-links' to="/home">Home</Link>{' '}
-                <Link className='nav-links' to="/favorites">Favorites</Link>
+                <Link className='nav-links' to="/">Home</Link>{' '}
             </div>
 
 
