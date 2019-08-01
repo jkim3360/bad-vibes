@@ -40,10 +40,12 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+      this.fetchArtistNews()
   }
 
   componentDidMount() {
     const API_TOKEN = process.env.REACT_APP_API_TOKEN
+  
     axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=music&apiKey=${API_TOKEN}`)
       .then(responseData => {
         const searchResult = responseData.data.articles;
@@ -54,6 +56,7 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+    
     axios.get(`https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/non-explicit.json`)
       .then(responseData => {
         const charts = responseData;
@@ -64,6 +67,21 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+  }
+
+  fetchArtistNews = () => {
+    const API_TOKEN = process.env.REACT_APP_API_TOKEN
+    axios.get(`https://newsapi.org/v2/everything?q=${this.state.searchItem}&apiKey=${API_TOKEN}`)
+    .then(responseData => {
+      const searchResult = responseData.data.articles;
+      this.setState({
+        newsSearchResult: searchResult,
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    })
+
   }
 
   render() {

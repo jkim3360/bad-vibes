@@ -48,7 +48,7 @@ export default function MainPage(props) {
                             }}>
                                 <div className="search2" style={{ 'margin': `${0}px` }}>
                                     <Input
-                                        placeholder="Search Artist or Title"
+                                        placeholder="Search Artist or Track"
                                         onChange={props.onChange}
                                         value={props.value}
                                         name="searchItem" />

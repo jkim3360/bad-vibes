@@ -29,7 +29,7 @@ export default function Navbar({ value, onChange, onSubmit }) {
             <form onSubmit={onSubmit}>
                 <div className="search">
                     <Input className="search-form"
-                        placeholder="Search Artist or Title"
+                        placeholder="Search Artist or Track"
                         onChange={onChange}
                         value={value}
                         name="searchItem" />
