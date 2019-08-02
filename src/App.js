@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, withRouter } from "react-router-dom";
-import './App.css';
 import MainPage from './components/MainPage'
-import Navbar from './components/Navbar'
 import Charts from './components/Charts'
+import './App.css';
 
 
 const axios = require('axios');
@@ -81,23 +80,12 @@ class App extends React.Component {
     .catch(error => {
       console.error(error);
     })
-
   }
 
   render() {
     const React = require('react');
     return (
       <div className="app-container">
-
-        <Route
-          path="/"
-          render={props => (
-            <Navbar
-              {...props}
-              value={this.state.searchItem}
-              onSubmit={this.handleSubmit}
-              onChange={this.handleChange}
-            />)} />
 
         <Route
           path="/"

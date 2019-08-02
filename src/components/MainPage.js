@@ -2,9 +2,9 @@
 import React from 'react'
 import { Route } from "react-router-dom";
 import { Parallax } from 'react-parallax';
-import { Input } from './common';
 import Charts from './Charts'
 import Footer from './Footer'
+import Navbar from './Navbar'
 import SearchResultsList from './SearchResultsList';
 import SongPage from './SongPage';
 import './images/vinyl.jpg'
@@ -15,7 +15,8 @@ import './images/earphones.jpg'
 
 export default function MainPage(props) {
     const backgroundStyle = {
-        width: '100%',
+        width: `${1440}px`,
+        height: `${940}px`,
         opacity: 1
     }
     return (
@@ -23,38 +24,28 @@ export default function MainPage(props) {
             <Parallax bgImageStyle={backgroundStyle}
                 blur={0}
                 bgImage={require('./images/boom-box.jpg')}
-                strength={700}>
-                <Charts />
+                strength={750}>
+                <Navbar value={props.value}
+                    onSubmit={props.onSubmit}
+                    onChange={props.onChange} />
                 <div className='image-container'>
                     <div className="overlay">
                         <div className="text">
 
                             <div style={{
-                                'letterSpacing': `${3}px`,
-                                'margin-bottom': 20
+                                'letterSpacing': `${3}px`
                             }}>
                                 <p style={{
                                     'fontSize': `${60}px`,
                                     'fontFamily': 'lato', 'fontWeight': 300
                                 }}>
-                                    Welcome to <strike>Bad</strike> Vibes.</p>
+                                    Welcome to <strike>Bad</strike> Vibes.
+                                    <p style={{
+                                        'fontSize': `${15}px`,
+                                    }}>Discover music.</p>
+                                </p>
                             </div>
-
                             <br />
-
-                            <form onSubmit={props.onSubmit} style={{
-                                'width': `${700}px`,
-                                'padding-left': `${140}px`
-                            }}>
-                                <div className="search2" style={{ 'margin': `${0}px` }}>
-                                    <Input
-                                        placeholder="Search Artist or Track"
-                                        onChange={props.onChange}
-                                        value={props.value}
-                                        name="searchItem" />
-                                    <button className="search-button2">Go</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -72,23 +63,26 @@ export default function MainPage(props) {
                     <div className='news-feed-header'><h1 style={{
                         'fontFamily': 'raleway',
                         'fontSize': 20,
-                        'marginTop': 0,
-                        'background': "#000000",
-                        'width': `${50}%`,
-                        'color': 'white',
-                        'textAlign': 'center',
-
-                    }}>Top Stories</h1><div style={{
-                        'color': 'white',
                         'fontWeight': 'bold',
-                    }}>|</div><h1
+                        'marginTop': 0,
+                        'background': '#ffdb00',
+                        'height': `${25}px`,
+                        'width': `${49}%`,
+                        'color': 'black',
+                        'textAlign': 'center',
+                    }}>Top Stories</h1><div style={{
+                        'color': 'black',
+                        'fontWeight': 'bold',
+                        'width': `${4}px`
+                    }}></div><h1
                         style={{
                             'fontFamily': 'raleway',
                             'fontSize': 20,
                             'marginTop': 0,
-                            'background': "#000000",
+                            'background': "#ffdb00",
+                            'height': `${25}px`,
                             'width': `${50}%`,
-                            'color': 'white',
+                            'color': 'black',
                             'textAlign': 'center',
                         }}>Track List</h1></div>
                     <div className='news-charts'>
@@ -107,7 +101,7 @@ export default function MainPage(props) {
                                             </div>
                                             <span className='headline'>
                                                 <div className='headline-container'><a href={url} target="_blank">
-                                                    <p style={{ 'textAlign': 'left' }}
+                                                    <p style={{ 'textAlign': 'left', 'fontWeight': 'bold' }}
                                                         key={url}>{title}</p>
                                                 </a></div>
                                             </span>
