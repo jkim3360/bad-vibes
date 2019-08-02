@@ -1,6 +1,6 @@
 body {
   position: absolute;
-  font-family: rubik;
+  font-family: 'open sans';
   height: 100vh;
 }
 
@@ -13,40 +13,43 @@ body {
 }
 
 .title:hover {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: darkgray;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
 }
 
 .navbar {
-  background: black;
+  background: rgb(255, 219, 0);
   display: flex;
   flex-direction: row;
   padding: 0px;
   font-family: raleway;
   font-size: 20px;
   height: 80px;
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
   position: sticky;
   text-decoration: none;
   top: 0px;
-  opacity: .8;
+  opacity: .6;
   z-index: 2;
+  position: absolute;
 }
 
-.nav-links-container {
-  width: 7%;
-  display: flex;
-  justify-content: space-evenly
+.navbar:hover {
+  opacity: 1;
 }
 
 .nav-links {
   color: white;
   transition: .5s;
+  font-size: 22px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .nav-links:hover {
-  color: gray
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  color: rgb(255, 219, 0);
 }
 
 .react-parallax {
@@ -59,13 +62,38 @@ body {
 }
 
 .cassette {
-  position: relative;
   left: 15px;
   top: 3px;
-  height: 60px;
+  height: 50px;
   margin: 0px;
-  background: black;
+  background: transparent;
   z-index: 1;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 210px;
+  top: 100px;
+}
+
+.cassette-footer {
+  left: 125px;
+  top: 3px;
+  height: 80px;
+  margin: 0px;
+  background: transparent;
+  z-index: 1;
+}
+
+.footer-logo-text {
+  font-size: 30px;
+  font-family: "crimson text";
+  color: rgb(255, 219, 0);
+  margin: 0;
+  transition: .5s;
+  text-shadow: -1px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1px black;
 }
 
 h1 {
@@ -78,7 +106,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   background: white;
-  height: 453px;
+  height: 500px;
   width: 725px;
   overflow: auto;
   margin: 20px 0 0 17px;
@@ -152,6 +180,8 @@ a {
   padding: 0;
   text-size-adjust: 13px;
   font-weight: bold;
+  height: 37px;
+  overflow: hidden;
 }
 
 .charts {
@@ -245,13 +275,13 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500px;
+  height: 550px;
 }
 
 .news-charts {
   display: flex;
   flex-direction: row;
-  height: 500px;
+  height: 540px;
   border-bottom: 2px solid #C8C8C8;
 }
 
@@ -336,23 +366,20 @@ a {
 }
 
 .image-container:hover .overlay {
-  transition: .5s ease;
-  opacity: .6;
+  transition: .6s ease;
+  opacity: .7;
 }
 
 .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 40px;
+  font-size: 75px;
   position: absolute;
-  width: 775px;
+  width: 700px;
   height: 140px;
-  top: 50%;
-  left: 50%;
-  padding-bottom: 50px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  margin-top: 25px;
 }
 
 p {
@@ -365,6 +392,9 @@ p {
 
 .overlay {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -386,8 +416,8 @@ svg {
 }
 
 .search {
-  position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -413,12 +443,12 @@ input {
 }
 
 input:focus {
-  color: white;
+  color: black;
 }
 
 .search-button {
   outline: none;
-  border: .6px solid white;
+  border: .6px solid black;
   margin-left: 10px;
   background: white;
   text-align: center;
@@ -433,8 +463,9 @@ input:focus {
 }
 
 .search-button:hover {
-  color: white;
+  color: rgb(255, 219, 0);
   background-color: black;
+  border: .6px solid white;
 }
 
 .search-button2 {
@@ -486,7 +517,7 @@ input:focus {
   align-content: flex-start;
   list-style: none;
   line-height: 2;
-  width: 250px;
+  width: 200px;
 }
 
 .footer-base {

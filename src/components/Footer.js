@@ -4,6 +4,8 @@ import React from 'react'
 import './images/twitter.png'
 import './images/facebook.png'
 import './images/instagram.png'
+import '../components/cassette.jpg'
+
 
 export default function Footer() {
     return (
@@ -44,6 +46,14 @@ export default function Footer() {
                     <li><a href='#'>Mystur Tongue</a></li>
                     <li><a href='#'>Sam Baddy</a></li>
                 </ul>
+                <div className='footer-logo'>
+                    <div>
+                        <img className='cassette-footer'
+                            src={require('./cassette.jpg')} /></div>
+                    <h2 className='footer-logo-text'>
+                        <strike>Bad</strike> Vibes</h2>
+
+                </div>
             </div>
 
             <div className='footer-base'>

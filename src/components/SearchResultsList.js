@@ -7,24 +7,12 @@ import appleBadge from './images/apple-badge.svg'
 export default function SearchResultsList(props) {
   return (
     <div className='search-result-container' key='search-result-container'>
-      {/* <ScrollArea
-            speed={0.8}
-            className="area"
-            contentClassName="content"
-            horizontal={true}
-            ></ScrollArea> */}
-
       {props.searchResults ? props.searchResults.map(item => {
         const { artworkUrl100,
           artistName,
-          kind, trackName,
-          primaryGenreName,
+          trackName,
           trackId,
-          longDescription,
-          collectionName,
-          trackPrice,
-          previewUrl, trackViewUrl } = item
-
+          trackViewUrl } = item
         return (
           <div className="search-result-item-container" key={trackId}>
             <div className='album-artwork'>

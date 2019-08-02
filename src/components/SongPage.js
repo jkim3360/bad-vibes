@@ -12,21 +12,16 @@ export default function SongPage(props) {
       artworkUrl100,
       artistName,
       trackName,
-      trackId,
-      releaseDate,
       longDescription,
-      collectionName,
       trackPrice,
-      primaryGenreName,
       previewUrl } = props.location.state.song
 
-    const favoritesTracks = []
-    const [likeBtn, unlikeBtn] = useState('Like')
+    const [likeBtn, unlikeBtn] = useState('Info')
     const [numLikes, addLikes] = useState(0)
     const like = () => {
       if (numLikes === 0) {
         addLikes(numLikes + 1)
-        unlikeBtn("Unlike")
+        unlikeBtn("Hide")
         props.location.state.favorites.push({ artistName, trackName, artworkUrl60 })
 
       } else if (numLikes === 1) {
@@ -41,11 +36,9 @@ export default function SongPage(props) {
         <div className='player'>
           <div className="album-artwork"><img src={artworkUrl100} /></div>
           <Player previewUrl={previewUrl} />
-
           <u><h4>{artistName}</h4></u>
           <h2>{trackName}</h2>
           <p>{`$${trackPrice}`}</p>
-          <h4>{numLikes}</h4>
           <button className="like-button" onClick={like}>{likeBtn}</button>
           <button className="close-button"><Link to="/">Close</Link></button>
           <br />
@@ -54,10 +47,9 @@ export default function SongPage(props) {
         <div className="favorites">
           {props.location.state.favorites ?
             props.location.state.favorites.map(item => {
-              const { artistName, trackName, artworkUrl60 } = item
               return (
-                <div className="favorites" style={{ 'lineHeight': `2` }}><div style={{ 'fontSize': `${24}px`, 'color': 'grey' }}>Track Info</div>
-                  {longDescription ? longDescription : 'Artist info not available.'}
+                <div className="favorites" style={{ 'lineHeight': `2` }}><div style={{ 'fontSize': `${24}px`, 'color': 'grey' }}>Artist/Track Info</div>
+                  {longDescription ? longDescription : 'Sorry, the API does not provide info for this track. Not my fault.'}
                 </div>
               )
             }) : null}

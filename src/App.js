@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, withRouter } from "react-router-dom";
-import './App.css';
 import MainPage from './components/MainPage'
-import Navbar from './components/Navbar'
 import Charts from './components/Charts'
+import './App.css';
 
 
 const axios = require('axios');
@@ -40,10 +39,12 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+      this.fetchArtistNews()
   }
 
   componentDidMount() {
     const API_TOKEN = process.env.REACT_APP_API_TOKEN
+  
     axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=music&apiKey=${API_TOKEN}`)
       .then(responseData => {
         const searchResult = responseData.data.articles;
@@ -54,6 +55,7 @@ class App extends React.Component {
       .catch(error => {
         console.error(error);
       })
+    
     axios.get(`https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/non-explicit.json`)
       .then(responseData => {
         const charts = responseData;
@@ -66,20 +68,24 @@ class App extends React.Component {
       })
   }
 
+  fetchArtistNews = () => {
+    const API_TOKEN = process.env.REACT_APP_API_TOKEN
+    axios.get(`https://newsapi.org/v2/everything?q=${this.state.searchItem}&apiKey=${API_TOKEN}`)
+    .then(responseData => {
+      const searchResult = responseData.data.articles;
+      this.setState({
+        newsSearchResult: searchResult,
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  }
+
   render() {
     const React = require('react');
     return (
       <div className="app-container">
-
-        <Route
-          path="/"
-          render={props => (
-            <Navbar
-              {...props}
-              value={this.state.searchItem}
-              onSubmit={this.handleSubmit}
-              onChange={this.handleChange}
-            />)} />
 
         <Route
           path="/"
