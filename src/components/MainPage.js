@@ -55,7 +55,6 @@ export default function MainPage(props) {
                 component={(props) =>
                     <SongPage {...props} />} />
 
-            <div className='main-page-container'><h1>Test</h1></div>
             <Parallax bgImageStyle={backgroundStyle}
                 blur={0}
                 strength={400}>

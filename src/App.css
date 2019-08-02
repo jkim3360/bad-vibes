@@ -28,7 +28,6 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
-  position: sticky;
   text-decoration: none;
   top: 0px;
   opacity: .6;
@@ -44,6 +43,8 @@ body {
   color: white;
   transition: .5s;
   font-size: 22px;
+  position: relative;
+  right: 10px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -62,7 +63,8 @@ body {
 }
 
 .cassette {
-  left: 15px;
+  position: relative;
+  left: 20px;
   top: 3px;
   height: 50px;
   margin: 0px;
@@ -550,4 +552,190 @@ input:focus {
   text-overflow: ellipsis;
   color: gray;
   height: 20px;
+}
+
+@media screen and (min-width: 374px) and (max-width: 812px) {
+  .title {
+    font-size: 75px;
+    font-family: "crimson text";
+    color: white;
+    transition: .5s;
+    text-shadow: -1px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1px black;
+  }
+  .cassette {
+    position: relative;
+    left: 20px;
+    top: 3px;
+    height: 75px;
+    margin: 0px;
+    background: transparent;
+    z-index: 1;
+  }
+  .navbar {
+    background: rgb(255, 219, 0);
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    font-family: raleway;
+    font-size: 20px;
+    height: 200px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    top: 0px;
+    opacity: 1;
+    z-index: 2;
+    position: absolute;
+  }
+  .nav-links {
+    display: none;
+  }
+  input {
+    width: 400px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-family: raleway;
+    height: 15px;
+    color: black;
+    font-size: 40px;
+  }
+  input:focus {
+    color: black;
+  }
+  .body-top {
+    height: 1800px;
+  }
+  .search-button {
+    outline: none;
+    border: .6px solid black;
+    background: white;
+    text-align: center;
+    height: 50px;
+    width: 155px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: raleway;
+    font-weight: bold;
+    transition-duration: 0.6s;
+  }
+  .image-container {
+    height: 700px;
+  }
+  .news-charts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 1100px;
+  }
+  .news {
+    width: 100%;
+    height: 900px;
+  }
+  .news-feed-header {
+    display: none;
+  }
+  .news-item-container {
+    position: relative;
+    width: 800px;
+    padding-left: 24px;
+  }
+  .news-img {
+    height: 100%;
+    width: 100%;
+  }
+  .headline-container {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 700px;
+    margin-right: 100px;
+  }
+  p {
+    width: 700px;
+    font-size: 30px;
+  }
+  /* .player-favorites{
+    width: 1200px
+  } */
+  .favorites {
+    display: none;
+  }
+  .player {
+    width: 1100px;
+  }
+  .body-bottom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 75px;
+  }
+  .search-result-container {
+    width: 1100px;
+    margin-top: 10px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 900px;
+  }
+  .search-result-item-container {
+    width: 300px;
+    height: 200px;
+    margin-top: 50px;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    height: 200px;
+    top: 20px;
+    margin: 0;
+  }
+  .footer-logo {
+    position: relative;
+    left: 30px;
+    top: 0px;
+  }
+  .cassette-footer {
+    height: 100px;
+  }
+  .footer-logo-text {
+    font-size: 50px;
+    position: relative;
+    right: 25px;
+  }
+  .footer-list {
+    display: none;
+  }
+  .social-media {
+    height: 30px;
+  }
+  .photo-credits {
+    display: none;
+  }
+  .footer-base {
+    position: absolute;
+    right: 300px;
+    margin: none;
+  }
+  .artist-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: gray;
+    height: 20px;
+  }
 }

@@ -38,7 +38,7 @@ export default function SongPage(props) {
           <Player previewUrl={previewUrl} />
           <u><h4>{artistName}</h4></u>
           <h2>{trackName}</h2>
-          <p>{`$${trackPrice}`}</p>
+          <h4>{`$${trackPrice}`}</h4>
           <button className="like-button" onClick={like}>{likeBtn}</button>
           <button className="close-button"><Link to="/">Close</Link></button>
           <br />
