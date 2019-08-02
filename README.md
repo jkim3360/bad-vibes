@@ -1,6 +1,8 @@
 # Music Sample and News Site 
 ### http://badvibes.surge.sh
 
+![alt text](https://github.com/jkim3360/bad-vibes/blob/master/readme-images/body-top.png)
+
 I created a music news website with a search engine by which users can discover new music and sample their favorite tunes. This is purely a promotional website using the Apple iTunes API and a news API sourced from www.newsapi.org.
 
 ## `Developer Tools`
@@ -28,6 +30,14 @@ The goal was to produce a site that has a search bar to grabs data from the iTun
 - Access API
 - Render data to front-end
 
+## Player
+
+![alt text](https://github.com/jkim3360/bad-vibes/blob/master/readme-images/player.png)
+
+## News Feed and Search Results
+
+![alt text](https://github.com/jkim3360/bad-vibes/blob/master/readme-images/main-content.png)
+
 ## Post MVP
 As I was building the app, I naturally wanted to add more features I found useful or visually pleasant in site I have previously visited
 
@@ -35,6 +45,4 @@ As I was building the app, I naturally wanted to add more features I found usefu
 - Second API for news feed
 - Ability to search news API simultaneously with music search
 - Artist/track info button adjacent to music player
-
-Deployed Project 
 
