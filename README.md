@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Music Sample and News Site 
+### http://badvibes.surge.sh
 
-## Available Scripts
+I created a music news website with a search engine by which users can discover new music and sample their favorite tunes. This is purely a promotional website using the Apple iTunes API and a news API sourced from www.newsapi.org.
 
-In the project directory, you can run:
+## `Developer Tools`
 
-### `npm start`
+### React
+Using the concepts and skills I learned through General Assembly, I was able to construct a website that consists of various function and class components, dyanmically linked by react routing and linking.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Axios
+An HTTP client that automatically transforms JSON data as opposed to the two-step process of .fetch().
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Postman
+Postman was very helpful in this project because of its ability to seamlessly make API requests and allow me visualize the data structures I wanted to work with.
 
-### `npm test`
+### React Parallax
+This was the first time I implemented an node package that allowed me to expand the functionality of my website. The parallax effect gives the site's an organic and interactive user experience as the page is scrolled up and down.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Most Viable Product
+The goal was to produce a site that has a search bar to grabs data from the iTunes API and generates results for users to find music they are interested in. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Set up routes and links
+- Access API
+- Render data to front-end
 
-### `npm run eject`
+## Post MVP
+As I was building the app, I naturally wanted to add more features I found useful or visually pleasant in site I have previously visited
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React Parallax
+- Second API for news feed
+- Ability to search news API simultaneously with music search
+- Artist/track info button adjacent to music player
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Deployed Project 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
